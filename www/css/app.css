@@ -1,0 +1,189 @@
+
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+@-ms-viewport { width: 100vw ; zoom: 100% ; }                           @viewport { width: 100vw ; zoom: 100% ; }
+@-ms-viewport { user-zoom: fixed ; }                                    @viewport { user-zoom: fixed ; }
+
+*{
+    position: absolute;
+    text-align: center;
+    background-size: 100% 100%;
+    background-clip:border-box;
+    font-family: Verdana,Geneva,Kalimati,sans-serif;
+}
+span {
+    display: inline;
+    position: relative;
+}
+html{
+    overflow: hidden;
+}
+body {
+    /* Disable certain interactions on touch devices */
+    /* derived from https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+    -webkit-touch-callout: none ;
+    -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
+    -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
+    -webkit-highlight: none ;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) ;
+    -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+
+    /* margin: 0.5rem ; */
+    background: white ;
+    color: black ;
+    background-image: url("../img/mainbg.jpg");
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+input, textarea  {
+    /* allow copy-paste */
+    -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
+}
+
+.align-center {
+    text-align: center ;
+}
+
+#escena1{
+    background-image: url(../img/fondo.png);
+    width: 900px;
+    height: 600px;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+
+.boton{
+    width: 277px;
+    height: 171px;
+    background: none;
+    background-image: url(../img/cuadro.png);
+    border: none;
+
+}
+.boton:focus, .boton:active, .boton:visited, .boton:hover{
+    outline: none;
+}
+.boton:hover{
+    -ms-transform: scale(1.1,1.1); /* IE 9 */
+    -webkit-transform: scale(1.1,1.1); /* Chrome, Safari, Opera */
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+#opcion1{
+    left: 32px;
+    top: 210px;
+}
+
+#opcion2{
+    left: 585px;
+    top: 210px;
+}
+
+#opcion3{
+    left: 32px;
+    top: 390px;
+}
+#opcion4{
+    left: 585px;
+    top: 390px;
+}
+.textoBoton{
+    font-size: 40px;
+    font-weight: bold;
+}
+.textoNumero{
+    font-size: 56px;
+    font-weight: bold;
+    left: 36%;
+    top: 23%;
+    width: 240px;
+}
+.destacado{
+    color:#FF0000;
+}
+.btnSelected{
+    -ms-transform: scale(1.2,1.2) !important; /* IE 9 */
+    -webkit-transform: scale(1.2,1.2) !important; /* Chrome, Safari, Opera */
+    transform: scale(1.2,1.2) !important;
+}
+.digito{
+   font-size: 450%;
+    font-weight: bold;
+    color: #FFF;
+    left: 5.83em;
+    top: 4.1em;
+}
+#header{
+    background-image: url(../img/head.png);
+    height: 78px;
+    width: 900px;
+    top: 5px;
+    text-align: left;
+}
+#footer{
+    background-image: url(../img/foot.png);
+    height: 78px;
+    width: 900px;
+    top: 520px;
+    overflow: hidden;
+}
+#titulo{
+    text-align: left;
+    font-size: 2em;
+    padding-top: 10px;
+    padding-left: 40px;
+    color: #FFF;
+}
+
+.popsplash{
+    width: 370px;
+    height: 225px;
+    display: block;
+    left: 260px;
+    top: 180px;
+    -ms-transform: scale(0,0); /* IE 9 */
+    -webkit-transform: scale(0,0); /* Chrome, Safari, Opera */
+    transform: scale(0,0);
+}
+
+#good{
+    background-image: url(../img/good.png);
+}
+
+#tryagain{
+    background-image: url(../img/tryagain.png);
+}
+
+#ready{
+    background-image: url(../img/btn-listo.png);
+}
+
+#restart{
+    background-image: url(../img/btn-comenzar.png);
+}
+
+
+#seeanswer{
+    background-image: url(../img/seeanswer.png);
+}
+.botonesui{
+    width: 170px;
+    height: 75px;
+    display: block;
+    /*top: 20px; posicion visible*/
+    top: 75px;
+    right: 20px;
+}
+.animsplash{
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-animation-timing-function: cubic-bezier(.45,.96,.81,.63);
+    animation-timing-function: cubic-bezier(.45,.96,.81,.63);
+}

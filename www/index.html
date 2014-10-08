@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title></title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+<!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's screen.
+  * Note that the meta viewport approach is being phased out in favor of the @viewport CSS rule.
+  * For a quick overview of both, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see what happens, try the app on a real device with and without a "meta viewport" tag.
+-->
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/hover.css">
+     <script src="js/jquery-2.1.1.min.js"></script>
+     <script src="js/helper.js"></script>
+     <script src="js/base.js"></script>
+</head>
+
+
+<body>
+    <!-- content -->
+    
+    <div id="superWrapper">
+        
+        <div id="escena1" class="escena">
+            <div id="numeroRandom" class="textoNumero">9.<span class="destacado">8</span>42</div>
+            <div id="digito" class="digito">8</div>
+
+            <button id="opcion1" class="boton grow-rotate"><span class="textoBoton">80</span></button>
+            <button id="opcion2" class="boton grow-rotate"><span class="textoBoton">800</span></button>
+            <button id="opcion3" class="boton grow-rotate"><span class="textoBoton">8.000</span></button>
+            <button id="opcion4" class="boton grow-rotate"><span class="textoBoton">8</span></button>
+        </div>
+        
+        <div id="header"><div id="titulo"> Titulo de la maquina </div></div>
+        <div id="footer">
+            <div id="ready" class="botonesui animsplash"></div>
+            <div id="restart" class="botonesui animsplash"></div>
+        </div>
+        <div id="overallmisc">
+            <div id="good" class="popsplash animsplash"></div>
+            <div id="tryagain" class="popsplash animsplash"></div>
+            <div id="seeanswer" class="popsplash animsplash"></div>
+            <div id="xxxxx" class="popsplash animsplash"></div>
+        </div>
+        
+    </div>
+      
+
+    
+    <!-- End content -->
+    <script src="intelxdk.js"></script>         <!-- phantom library, needed for XDK api calls -->
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls -->
+    <script src="xhr.js"></script>              <!-- phantom library, needed for XDK CORS -->
+
+    <script src="js/app.js"></script>
+    <script src="js/init-app.js"></script>
+    <script src="js/init-dev.js"></script>
+    
+   
+
+</body>
+</html>
