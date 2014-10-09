@@ -4,25 +4,17 @@
     <title></title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-<!--
-  * The "meta viewport" tag (below) helps your app size appropriately to a device's screen.
-  * Note that the meta viewport approach is being phased out in favor of the @viewport CSS rule.
-  * For a quick overview of both, see this article:
-  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
-  * To see what happens, try the app on a real device with and without a "meta viewport" tag.
--->
-
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
 
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="e1/css/scene.css"> <!-- estilo especial de la maquina -->
+    <link rel="stylesheet" href="css/app.css"> <!-- estilo base de la maquina -->
+    <link rel="stylesheet" href="css/hover.css"> <!-- animaciones para mouseHover -->
      <script src="js/jquery-2.1.1.min.js"></script>
      <script src="js/helper.js"></script>
      <script src="js/base.js"></script>
 </head>
-
 
 <body>
     <!-- content -->
@@ -30,7 +22,7 @@
     <div id="superWrapper">
         
         <div id="escena1" class="escena">
-            <div id="numeroRandom" class="textoNumero">9.<span class="destacado">8</span>42</div>
+            <div id="numeroRandom" class="textoNumero">1.<span class="destacado">8</span>42</div>
             <div id="digito" class="digito">8</div>
 
             <button id="opcion1" class="boton grow-rotate"><span class="textoBoton">80</span></button>

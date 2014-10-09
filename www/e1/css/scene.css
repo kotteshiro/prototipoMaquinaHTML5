@@ -1,0 +1,73 @@
+#escena1{
+    background-image: url(../img/fondo.png);
+    width: 900px;
+    height: 600px;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.boton{
+    width: 277px;
+    height: 171px;
+    background: none;
+    background-image: url(../img/cuadro.png);
+    border: none;
+
+}
+
+.boton:focus, .boton:active, .boton:visited, .boton:hover{
+    outline: none;
+}
+
+.boton:hover{
+    -ms-transform: scale(1.1,1.1); /* IE 9 */
+    -webkit-transform: scale(1.1,1.1); /* Chrome, Safari, Opera */
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+
+#opcion1{
+    left: 32px;
+    top: 210px;
+}
+
+#opcion2{
+    left: 585px;
+    top: 210px;
+}
+
+#opcion3{
+    left: 32px;
+    top: 390px;
+}
+#opcion4{
+    left: 585px;
+    top: 390px;
+}
+.textoBoton{
+    font-size: 40px;
+    font-weight: bold;
+}
+.textoNumero{
+    font-size: 56px;
+    font-weight: bold;
+    left: 36%;
+    top: 23%;
+    width: 240px;
+}
+.destacado{
+    color:#FF0000;
+}
+.btnSelected{
+    -ms-transform: scale(1.2,1.2) !important; /* IE 9 */
+    -webkit-transform: scale(1.2,1.2) !important; /* Chrome, Safari, Opera */
+    transform: scale(1.2,1.2) !important;
+}
+.digito{
+   font-size: 450%;
+    font-weight: bold;
+    color: #FFF;
+    left: 5.83em;
+    top: 4.1em;
+}

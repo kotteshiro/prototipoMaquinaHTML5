@@ -8,6 +8,7 @@ var _cfg={
 	version: "0.5.2"
 };
 var btnListo,btnComenzar;
+var seleccionado;
 
 window.onresize = resize;
 window.ondeviceorientation  = resize;
@@ -18,30 +19,19 @@ function resize(){
         var h=parseInt(Math.min(window.innerWidth/_cfg.width, window.innerHeight/_cfg.height)*_cfg.height);
         var wi=Math.min(window.innerWidth/_cfg.width, window.innerHeight/_cfg.height);
         var wo=(Math.max(window.innerWidth, window.innerHeight)/900)*900;
-        //if(a<=_cfg.width && h <= _cfg.height){
-             
-            //director.setScale(Math.min(window.innerWidth/_cfg.width, window.innerHeight/_cfg.height),Math.min(window.innerWidth/_cfg.width, window.innerHeight/_cfg.height));
-            document.getElementById("superWrapper").style.transform="scale("+wi+","+wi+")";
-            document.getElementById("superWrapper").style["-webkit-transform"]="scale("+wi+","+wi+")";
-            document.getElementById("superWrapper").style["-ms-transform"]="scale("+wi+","+wi+")";
-       /* }else{
-            document.body.style.transform="scale(1,1)";
-        }*/
-        /*document.getElementById("wrap").style.width=a+"px";
-        document.getElementById("wrap").style.height=h+"px";
-*/  
-
-        document.body.style.width=window.innerWidth+"px";
-        document.body.style.height=window.innerHeight+"px";
         var wmar= ((window.innerWidth-(_cfg.width*wi))/2);
         var hmar= ((window.innerHeight-(_cfg.height*wi))/2);
+        var bgp=wo+"px";
+        
+        document.getElementById("superWrapper").style.transform="scale("+wi+","+wi+")";
+        document.getElementById("superWrapper").style["-webkit-transform"]="scale("+wi+","+wi+")";
+        document.getElementById("superWrapper").style["-ms-transform"]="scale("+wi+","+wi+")";
+        document.body.style.width=window.innerWidth+"px";
+        document.body.style.height=window.innerHeight+"px";
+        document.body.style["background-size"]=bgp;
         document.getElementById("superWrapper").style.left=wmar+"px";
         document.getElementById("superWrapper").style.top=hmar+"px";
-        var bgp=wo+"px";
-       document.body.style["background-size"]=bgp;
-      
-        //document.getElementById("_c").style.top=Math.round(sobraheight/2)+"px";
-        //document.getElementById("_c").style.left=Math.round(sobrawidth/2)-13+"px";
+        
 
         console.log("background...",bgp);
         console.log("resize...",a,h);
@@ -51,11 +41,15 @@ function resize(){
         lastsize=window.innerWidth+"_"+window.innerHeight;
     }
 }
+
 $(function(){
-    $(".boton").click(function(am){ 
-        $(".boton").removeClass("btnSelected"); 
-        $(am.currentTarget).addClass("btnSelected"); 
+    $(".boton").click(function(am){
+        $(".boton").removeClass("btnSelected");
+        $(am.currentTarget).addClass("btnSelected");
+        seleccionado=am.currentTarget;
+        btnListo.show();
     });
+    
     document.title = _cfg.title;
     $("#titulo").text(_cfg.title);
     
