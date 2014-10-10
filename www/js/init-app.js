@@ -22,11 +22,13 @@ window.app = window.app || {} ;         // there should only be one of these, bu
 app.initEvents = function() {
     "use strict" ;
     //start here!
+    
+    alert("wooo");
    app.hideSplashScreen();
 	
   
 } ;
-document.addEventListener("app.Ready", app.initEvents, false);
+//document.addEventListener("app.Ready", app.initEvents, false);
 
 
 

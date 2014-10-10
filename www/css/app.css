@@ -122,3 +122,6 @@ input, textarea  {
     -webkit-animation-timing-function: cubic-bezier(.45,.96,.81,.63);
     animation-timing-function: cubic-bezier(.45,.96,.81,.63);
 }
+#superWrapper{
+    opacity: 0;
+}

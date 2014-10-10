@@ -106,6 +106,10 @@ dev.onDeviceReady = function() {
     var evt = document.createEvent("Event") ;
     evt.initEvent("app.Ready", false, false) ;
     document.dispatchEvent(evt) ;
+    
+    var evt1 = document.createEvent("Event") ;
+    evt1.initEvent("readySetup", true, false) ;
+    document.dispatchEvent(evt1) ;
 
     console.log(fName, dev.isDeviceReady) ;
     console.log(fName, "exit") ;

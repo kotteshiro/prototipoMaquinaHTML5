@@ -42,25 +42,6 @@ function resize(){
     }
 }
 
-$(function(){
-    $(".boton").click(function(am){
-        $(".boton").removeClass("btnSelected");
-        $(am.currentTarget).addClass("btnSelected");
-        seleccionado=am.currentTarget;
-        btnListo.show();
-    });
-    
-    document.title = _cfg.title;
-    $("#titulo").text(_cfg.title);
-    
-    
-    /*botones*/
-    btnListo= new Botonui("ready");
-    btnComenzar= new Botonui("restart");
-    btnListo.hide();
-    btnComenzar.hide();
-});
 
 
-
-
+console.log("end base.js");

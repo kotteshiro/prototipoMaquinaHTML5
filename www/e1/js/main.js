@@ -1,17 +1,27 @@
 /* jshint -W117, -W098 */ //desactivo correcciones de  globales, y las declaraciones no usadas
+window.maquina = window.maquina || {}; //Si no existe, creo el objeto global de la escena. 
 
-windows.maquina = windows.maquina || {}; //Si no existe, creo el objeto global de la escena. 
-
-document.addEventListener("app.Ready", maquina.setup, false); //cuando la aplicacion está lista
+//document.addEventListener("readySetup",  maquina.start, false); //cuando la aplicacion está lista
 
 maquina.setup=function(){
     //Es lo primero que se ejecuta, aqui se pueden instanciar objetos, setear propiedades iniciales, etc.
     //se ejecuta solo una vez antes de iniciar la aplicación
     //no retorna
     //TO-DO
+  
+    
+    $("#superWrapper").css("opacity",1); //tmp
+    
+    $(".boton").click(function(am){ //se selecciona una opcion a la vez
+        $(".boton").removeClass("btnSelected"); //quitamos la clase de seleccion(btnSelected) (deseleccionamos todo)
+        $(am.currentTarget).addClass("btnSelected"); // aplicamos la clase de seleccion al elemento actual
+    });
+    maquina.start();
+    //alert("setup");
 };
 
 maquina.start=function(){
+    $("#superWrapper").css("opacity",1); //muestra
     //comienzo de un nuevo intento, aqui se pueden generar los valores iniciales, definir las opciones, las respuestas correctas, los distractores.
     //se llama cada vez que se inicia una partida
     //no retorna
@@ -30,6 +40,7 @@ maquina.isValid=function(){
     //si la maquina se resolvió correctamente
     //retorna true si el resultado ingresado es válido, o false si no lo es.
     //TO-DO
+    
     return false;
 };
 
@@ -55,6 +66,7 @@ maquina.showAnswer=function(){
     //Se llama cuando no quedan intentos y el usuario falla, se debe desplegar la respuesta correcta
     //no retorna
     //TO-DO
+    campo1.texto=respuestacorrecta;
 };
 
 maquina.block=function(bloquear){
@@ -75,3 +87,8 @@ maquina.reset=function(){
     //TO-DO
 };
 
+$(function(){
+    maquina.setup();
+});
+
+console.log("end main.js");
