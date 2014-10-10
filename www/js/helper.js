@@ -9,7 +9,9 @@ function showAndHide(selector,time){
         $(selector).css("transform", "scale(0)"); //se oculta el mensaje
     },time); //luego de 'time' ms
 }
-
+function TODO(desc){
+    console.warn("TO-DO:", desc);
+}
 /*boton*/
 
 

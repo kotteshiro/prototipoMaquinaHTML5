@@ -127,3 +127,12 @@ input, textarea  {
 #superWrapper{
     opacity: 0;
 }
+#blocklayer{
+    display: none;
+    background-color: #FFFFFF;
+    left: 0px;
+    top: 0px;
+    opacity: 0.2;
+    width: 900px;
+    height: 593px;
+}

@@ -31,7 +31,6 @@ maquina._showAnswer=function(){
 };
 
 maquina.splashGood=function(){
-   
     showAndHide("#good"); //declaracion en helper.js
 };
 
@@ -42,6 +41,16 @@ maquina.splashTryAgain=function(){
 maquina.splashSeeAnswer=function(){    
     showAndHide("#seeanswer"); //declaracion en helper.js
 };
+
+maquina._block=function(vl){    
+    if(vl===true){
+        $("#blocklayer").css("display","block");
+    }else{
+        $("#blocklayer").css("display","none");
+    }
+};
+
+
 
 //*****************
 
@@ -63,16 +72,33 @@ $(function(){
             maquina.onUsrFail();
             if(maquina.intentosRestantes<=1){ //si no quedan intentos
                 maquina.intentosRestantes = _cfg.intentos || 3;
+                
+                maquina.block(true);
+                maquina._block(true);
+                maquina.btnListo.hide();
                 maquina._showAnswer();
                 maquina.showAnswer();
+                maquina.btnComenzar.show();
+                
             }else{ //si quedan intentos
                 maquina.intentosRestantes--;
                 maquina._onTryAgain();
                 maquina.onTryAgain();
+                maquina.btnListo.hide();
             }
         }
     };
+    
+    maquina.btnComenzar.btnclick=function(){
+        maquina.block(false);
+        maquina._block(false);
+        maquina.btnComenzar.hide();
+        maquina.reset();
+        maquina.start();
+    };
+    
     $("#ready").click(maquina.btnListo.btnclick);
+    $("#restart").click(maquina.btnComenzar.btnclick);
     //maquina.btnListo._dom.addEventListener("click",maquina.btnclick); //seteo el evento click
     
     
@@ -83,9 +109,7 @@ $(function(){
     });
     
     document.title = _cfg.title;
-    $("#titulo").text(_cfg.title);
-    
-    
+    $("#titulo").text(_cfg.title);    
     /*botones*/
     
 });
