@@ -10,7 +10,9 @@
     text-align: center;
     background-size: 100% 100%;
     background-clip:border-box;
-    font-family: Verdana,Geneva,Kalimati,sans-serif;
+    /*font-family: Verdana,Geneva,Kalimati,sans-serif;*/
+    font-family: 'Signika', sans-serif;
+    font-weight: 600; 
 }
 span {
     display: inline;

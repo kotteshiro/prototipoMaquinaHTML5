@@ -14,26 +14,67 @@ maquina.check=function(){
         maquina.btnListo.hide();
     }
 };
+
 maquina._onUsrSuccess = function(){
-    
+    maquina.splashGood();
 };
 
+maquina._onTryAgain = function(){
+    maquina.splashTryAgain();
+};
+
+maquina._onUsrFail = function(){
+    //para el uso en scorm
+};
+maquina._showAnswer=function(){
+    maquina.splashSeeAnswer();
+};
+
+maquina.splashGood=function(){
+   
+    showAndHide("#good"); //declaracion en helper.js
+};
+
+maquina.splashTryAgain=function(){
+    showAndHide("#tryagain"); //declaracion en helper.js
+};
+
+maquina.splashSeeAnswer=function(){    
+    showAndHide("#seeanswer"); //declaracion en helper.js
+};
 
 //*****************
 
 $(function(){
+    maquina.intentosRestantes = maquina.intentosRestantes || _cfg.intentos || 3; //si existe se mantiene el valor, si no, se asigna el valor de la config, si no existe en la cofig se le asigna 3
     maquina.btnListo= new Botonui("ready");
     maquina.btnComenzar= new Botonui("restart");
 
     maquina.btnListo.hide(); //oculto boton listo
     maquina.btnComenzar.hide(); //oculto boton comenzar
-
-    maquina.btnListo.btnclick=function(){
+   
+    maquina.btnListo.btnclick=function(){ //cuando se hace click en boton listo
+        console.log("click en boton listo");
        if(maquina.isValid()){ //si el resultado es valido
             maquina._onUsrSuccess();
             maquina.onUsrSuccess();
+        }else{
+            maquina._onUsrFail();
+            maquina.onUsrFail();
+            if(maquina.intentosRestantes<=1){ //si no quedan intentos
+                maquina.intentosRestantes = _cfg.intentos || 3;
+                maquina._showAnswer();
+                maquina.showAnswer();
+            }else{ //si quedan intentos
+                maquina.intentosRestantes--;
+                maquina._onTryAgain();
+                maquina.onTryAgain();
+            }
         }
     };
+    $("#ready").click(maquina.btnListo.btnclick);
+    //maquina.btnListo._dom.addEventListener("click",maquina.btnclick); //seteo el evento click
+    
     
     $(".boton").click(function(am){
         seleccionado=am.currentTarget;
@@ -51,15 +92,14 @@ $(function(){
 
 function Botonui(id){
     this._dom=document.getElementById(id);
-    this._dom.addEventListener("click",this.btnclick);
+
+    this.show=function(){
+        this._dom.style.top="20px";
+    };
+    
+    this.hide=function(){
+        this._dom.style.top="75px";
+    };
 }
-Botonui.prototype.show=function(){
-    this._dom.style.top="20px";
-};
-Botonui.prototype.hide=function(){
-    this._dom.style.top="75px";
-};
-Botonui.prototype.btnclick=function(){
-    alert("listo");
-};
+
 console.log("End maquinaBase.js");
