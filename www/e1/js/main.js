@@ -119,15 +119,26 @@ maquina.showAnswer=function(){
     //Se llama cuando no quedan intentos y el usuario falla, se debe desplegar la respuesta correcta
     //no retorna
     //TO-DO
+    console.log("CORRECTA: " +maquina.correcta);
+    $(".boton").removeClass("btnSelected"); //quitamos la clase de seleccion(btnSelected) (deseleccionamos todo)
+    if($("#opcion1>span").html() == maquina.correcta){
+        $("#opcion1").addClass("btnSelected");
+    }else if($("#opcion2>span").html() == maquina.correcta){
+        $("#opcion2").addClass("btnSelected");
+    }else if($("#opcion3>span").html() == maquina.correcta){
+        $("#opcion3").addClass("btnSelected");
+    }else if($("#opcion4>span").html() == maquina.correcta){
+        $("#opcion4").addClass("btnSelected");
+    }
     
-    TODO("showAnswer en main.js");
+
 };
 
 maquina.block=function(bloquear){
     bloquear = bloquear || true;
     //parametro bloquear booleano, si es true bloquea, de lo contrario desbloquea
     //TO-DO
-    if(bloquear){
+        if(bloquear){
         //bloquear todo 
     }else{
         //permitir interaccion de todo
@@ -148,3 +159,4 @@ $(function(){
 });
 
 console.log("end main.js");
+//HCB 
