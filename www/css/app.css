@@ -17,7 +17,7 @@
 span {
     display: inline;
     position: relative;
-}
+} 
 html{
     overflow: hidden;
 }
@@ -51,20 +51,17 @@ input, textarea  {
 }
 
 #header{
-    background-image: url(../img/head.png);
+  
     height: 78px;
-    width: 900px;
+    width: 1280px;
     top: 5px;
     text-align: left;
-    background-size: initial;
-    background-position: top;
-    background-repeat: no-repeat;
 }
 #footer{
    background-image: url(../img/foot.png);
     height: 78px;
-    width: 900px;
-    top: 520px;
+    width: 1280px;
+    top: 645px;
     overflow: hidden;
     background-size: initial;
     background-repeat: no-repeat;
@@ -75,7 +72,7 @@ input, textarea  {
     text-align: left;
     font-size: 2em;
     padding-top: 10px;
-    padding-left: 40px;
+    padding-left: 60px;
     color: #FFF;
 }
 
@@ -83,8 +80,8 @@ input, textarea  {
     width: 370px;
     height: 225px;
     display: block;
-    left: 260px;
-    top: 180px;
+    left: 459px;
+    top: 260px;
     -ms-transform: scale(0,0); /* IE 9 */
     -webkit-transform: scale(0,0); /* Chrome, Safari, Opera */
     transform: scale(0,0);
@@ -132,7 +129,46 @@ input, textarea  {
     background-color: #FFFFFF;
     left: 0px;
     top: 0px;
-    opacity: 0.2;
-    width: 900px;
-    height: 593px;
+    opacity: 0.3;
+    width: 1280px;
+    height: 683px;
+}
+.animsBtnUI{
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-animation-timing-function: cubic-bezier(.45,.96,.81,.63);
+    animation-timing-function: cubic-bezier(.45,.96,.81,.63);
+}
+.animsBtnUI:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#bgmid{
+    width: 1280px;
+    height: 70px;
+}
+#hbl{      
+    background-image: url(../img/head_left.png);
+}
+#hbm{
+    background-image: url(../img/head_mid.png);
+    width: 87%;
+    background-repeat-x: repeat;
+}
+#hbr{
+    background-image: url(../img/head_right.png);
+}
+.headpart{
+    height: 100%;
+    width: 80px;
+    background-size: initial;
+    background-position: top;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    margin: -2px;
+    padding: 0px;
+    border: none;
 }

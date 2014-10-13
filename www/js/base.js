@@ -3,8 +3,8 @@ var lastsize=-1;
 var _cfg={
 	title: "LAS MULTIPLICACIONES",
 	titlestyle: "bold 27px Trebuchet MS, Helvetica, sans-serif",
-	width: 900,
-	height: 600,
+	width: 1280,
+	height: 720,
 	version: "0.5.2"
 };
 var btnListo,btnComenzar;

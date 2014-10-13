@@ -1,10 +1,17 @@
-#escena1{
+#fondoEscena{
     background-image: url(../img/fondo.png);
+    width: 1280px;
+    height: 720px;
+    display: block;
+}
+#escena1{
     width: 900px;
-    height: 600px;
+    height: 720px;
     display: block;
     margin: 0px;
     padding: 0px;
+    left: 200px;
+    top: 75px;
 }
 
 .boton{
@@ -13,7 +20,6 @@
     background: none;
     background-image: url(../img/cuadro.png);
     border: none;
-
 }
 
 .boton:focus, .boton:active, .boton:visited, .boton:hover{
@@ -46,14 +52,14 @@
     top: 390px;
 }
 .textoBoton{
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bold;
 }
 .textoNumero{
-    font-size: 56px;
+    font-size: 60pt;
     font-weight: bold;
-    left: 36%;
-    top: 23%;
+    left: 4em;
+    top: 1em;
     width: 240px;
 }
 .destacado{
@@ -65,9 +71,10 @@
     transform: scale(1.2,1.2) !important;
 }
 .digito{
-   font-size: 450%;
+    font-size: 450%;
     font-weight: bold;
     color: #FFF;
-    left: 5.83em;
-    top: 4.1em;
+    left: 5.7em;
+    top: 4.0em;
+
 }
