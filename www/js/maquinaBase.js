@@ -26,6 +26,7 @@ maquina._onTryAgain = function(){
 maquina._onUsrFail = function(){
     //para el uso en scorm
 };
+
 maquina._showAnswer=function(){
     maquina.splashSeeAnswer();
 };
@@ -67,6 +68,10 @@ $(function(){
        if(maquina.isValid()){ //si el resultado es valido
             maquina._onUsrSuccess();
             maquina.onUsrSuccess();
+            maquina.block(true);
+            maquina._block(true);
+            maquina.btnListo.hide();
+           maquina.btnComenzar.show();
         }else{
             maquina._onUsrFail();
             maquina.onUsrFail();
@@ -105,7 +110,7 @@ $(function(){
     $(".boton").click(function(am){
         seleccionado=am.currentTarget;
         maquina.check(); //chequea
-        maquina.btnListo.show();
+        //maquina.btnListo.show();
     });
     
     document.title = _cfg.title;

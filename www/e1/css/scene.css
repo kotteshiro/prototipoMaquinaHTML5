@@ -2,11 +2,12 @@
     background-image: url(../img/fondo.png);
     width: 1280px;
     height: 720px;
+    /*left: 14px;*/
     display: block;
 }
 #escena1{
     width: 900px;
-    height: 720px;
+    height: 600px;
     display: block;
     margin: 0px;
     padding: 0px;
@@ -59,7 +60,7 @@
     font-size: 60pt;
     font-weight: bold;
     left: 4em;
-    top: 1em;
+    top: 1.26em;
     width: 240px;
 }
 .destacado{
@@ -71,10 +72,10 @@
     transform: scale(1.2,1.2) !important;
 }
 .digito{
-    font-size: 450%;
+    font-size: 54pt;
     font-weight: bold;
     color: #FFF;
-    left: 5.7em;
-    top: 4.0em;
-
+    left: 5.1em;
+    top: 4.05em;
+    width: 2em;
 }
