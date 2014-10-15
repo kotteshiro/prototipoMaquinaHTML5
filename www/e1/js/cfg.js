@@ -1,0 +1,30 @@
+var _cfg={
+	title: "LAS MULTIPLICACIONES",
+	titlestyle: "bold 27px Trebuchet MS, Helvetica, sans-serif",
+	width: 1280,
+	height: 720,
+	version: "0.5.2",
+    adaptMethod: "scale",
+    assets:{
+        sound:[
+			{id:'INSTRUCCION',     							url:"sound/CORRECTO.mp3"},
+			{id:'COMENZAR',     							url:"sound/COMENZAR.mp3"},
+			{id:'CONTROLES',     							url:"sound/CONTROLES.mp3"},
+			{id:'OVERBOTON',     							url:"sound/ELEMENTO.mp3"},
+			{id:'ELEMENTO',    								url:"sound/ELEMENTO.mp3"},
+			{id:'GOOD',     							    url:"sound/1_excelente_lab_g.mp3"},
+			{id:'TRYAGAIN',     							url:"sound/2_vuelve_lab_g.mp3"},
+			{id:'SHOWANSW',     							url:"sound/3_revisa_lab_g.mp3"},
+			{id:'PASAR-NIVEL',     						    url:"sound/PASAR_NIVEL.mp3"},
+			{id:'SELECCION-RELAJADO-TIEMPO',                url:"sound/SELECCION_RELAJADO_TIEMPO.mp3"},
+			{id:'TITULO-ABRE',     						    url:"sound/TITULO_ABRE.mp3"	},
+			{id:'TIME_OVER',     							url:"sound/TIME_OVER.mp3"},
+			{id:'CORRECTO',     							url:"sound/CORRECTO.mp3"},
+			{id:"pasar_de_nivel" ,						    url:"sound/pasar_de_nivel.mp3"},
+			{id:"animo_1" ,                                 url:"sound/animo_1.mp3"},
+			{id:"animo_2" , 								url:"sound/animo_2.mp3"},
+			{id:"reloj" , 									url:"sound/reloj.mp3"},
+			{id:"excelente_2" , 							url:"sound/excelente_2.mp3"},
+		],
+    }
+};

@@ -38,7 +38,21 @@ body {
     background-repeat: no-repeat;
     margin: 0px;
     padding: 0px;
+     
+}
+button{
+   background: none;
+   background-size: 100% 100%;
+   background-clip:border-box;
+   border: none; 
+}
+button:focus, button:active, button:visited, button:hover{
     
+    outline: none;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 input, textarea  {
@@ -146,7 +160,7 @@ input, textarea  {
 #hbm{
     background-image: url(../img/head_mid.png);
     width: 83.8%;
-    background-repeat-x: repeat;
+    background-repeat: repeat-x;
 }
 #hbr{
     background-image: url(../img/head_right.png);
@@ -189,7 +203,7 @@ input, textarea  {
 #fbm{
     background-image: url(../img/foot_mid.png);
     width: 86%;
-    background-repeat-x: repeat;
+    background-repeat: repeat-x;
 }
 
 #fbr{
@@ -207,4 +221,50 @@ input, textarea  {
     margin: -2px;
     padding: 0px;
     border: none;
+}
+
+#botonesUI{
+    width: 100px;
+    height: 200px;
+    left: 1210px;
+    top: 160px;
+    z-index: 20;
+    text-align: left;
+}
+
+#btnInfo{
+    background: none;
+    border: none;
+    background-image: url(../img/btn-info.png);
+    width: 97px;
+    height: 88px;
+}
+#btnInfo:hover{
+     background-image: url(../img/btn-info-on.png);
+}
+
+#btnSonido{
+    background: none;
+    border: none;
+    background-image: url(../img/btn-sonido.png);
+    width: 97px;    height: 88px;
+    top: 68px;
+    left: -2px;
+}
+.btnSonidoMuted, .btnSonidoMuted:hover {
+    background-image: url(../img/btn-sonido-off.png) !important;
+}
+
+#btnSonido:hover{
+     background-image: url(../img/btn-sonido-on.png);
+}
+
+#instruccion{
+    background-image: url(../img/instruccion.png);
+    width: 255px;
+    height: 202px;
+    left: 1050px;
+    top: 160px;
+    z-index: 22;
+    text-align: left;
 }

@@ -13,9 +13,12 @@ maquina.setup=function(){
     
     $("#superWrapper").css("opacity",1); //tmp
      
-    $(".boton").click(function(am){ //se selecciona una opcion a la vez
+    $(".boton").click(function(event){ //se selecciona una opcion a la vez
+        
         $(".boton").removeClass("btnSelected"); //quitamos la clase de seleccion(btnSelected) (deseleccionamos todo)
-        $(am.currentTarget).addClass("btnSelected"); // aplicamos la clase de seleccion al elemento actual
+        $(event.currentTarget).addClass("btnSelected"); // aplicamos la clase de seleccion al elemento actual
+        maquina.check();
+        
     });
     maquina.start();
     //alert("setup");
@@ -27,11 +30,14 @@ maquina.start=function(){
     //se llama cada vez que se inicia una partida
     //no retorna
     //TO-DO
-    var numaevaluar = Math.floor((Math.random() * 9999 - 1000) + 1000);
+    var numaevaluar = Math.floor((Math.random() * 9000) + 1000) ;
+    var pos;
+    
+    
+    
     
     do{
-        var pos = Math.floor((Math.random() * 3) + 0);
-        
+        pos = Math.floor((Math.random() * 4) + 0);
     }while(numaevaluar.toString().charAt(pos)=="0");
     
     console.log(numaevaluar);
@@ -42,22 +48,24 @@ maquina.start=function(){
     var numfinal = numaevaluar.toString().substring(pos+1,4);
     var destacado = "<span class='destacado'>"+numdestacado+"</span>";
     console.log("switch", pos);
+    
+    
     switch (pos.toString()){
-            case "0": 
-                maquina.correcta=numdestacado * 1000;
-            break;
-            case "1": 
-                maquina.correcta=numdestacado * 100;
-            break;
-            case "2": 
-                maquina.correcta=numdestacado * 10;
-            break;
-            case "3": 
-                maquina.correcta=numdestacado * 1;
-            break;
-            default:
-                maquina.correcta="0";
-            }
+        case "0": 
+            maquina.correcta=numdestacado * 1000;
+        break;
+        case "1": 
+            maquina.correcta=numdestacado * 100;
+        break;
+        case "2": 
+            maquina.correcta=numdestacado * 10;
+        break;
+        case "3": 
+            maquina.correcta=numdestacado * 1;
+        break;
+        default:
+            maquina.correcta="0";
+    }
     
     $("#numeroRandom").html(num + destacado + numfinal);
     
@@ -65,22 +73,26 @@ maquina.start=function(){
     
     var items = Array(1,2,3,4);
 
-    items.sort(function() {return 0.5 - Math.random()})
+    items.sort(function() {return 0.5 - Math.random();});
  
     $("#opcion"+items[0]+" .textoBoton").html(numdestacado * 1);
     $("#opcion"+items[1]+" .textoBoton").html(numdestacado * 10);
     $("#opcion"+items[2]+" .textoBoton").html(numdestacado * 100);
     $("#opcion"+items[3]+" .textoBoton").html(numdestacado * 1000);
-    
-    
 };
 
 maquina.isReady=function(){
     //si la maquina está lista para ser revisada (si están todos los campos completados)
     //retorna true si está listo, o false si no lo está
     //TO-DO
-    TODO("isReady en main.js"); //borrame cuando completes esta funcion
-    return true;
+    
+    console.log("ISREADY",$(".btnSelected ").length);
+    if($(".btnSelected ").length > 0 ){
+        return true;
+    }else{
+        return false;
+    }
+    
 };
 
 maquina.isValid=function(){
@@ -111,9 +123,9 @@ maquina.onUsrSuccess=function(){
 maquina.onTryAgain=function(){
     //Se llama cuando se tiene un nuevo intento luego de fallar, aqui se debe restablecer todas las respuestas erradas .
     //no retorna
-    //TO-DO
-     TODO("onTryAgain en main.js");
-};
+    $(".boton").removeClass("btnSelected"); 
+    //maquina.start();
+};  
 
 maquina.showAnswer=function(){
     //Se llama cuando no quedan intentos y el usuario falla, se debe desplegar la respuesta correcta
@@ -150,13 +162,13 @@ maquina.reset=function(){
     //restablecer todo.
     //se llama despues de finalizar la jugada.
     //despues de esta funcion se llama a .start()
-    //TO-DO
-    TODO("reset en main.js");
+    $(".boton").removeClass("btnSelected"); 
+    maquina.start();
 };
 
 $(function(){
     maquina.setup();
-});
+}); 
 
 console.log("end main.js");
 //HCB 

@@ -1,13 +1,5 @@
 /* jshint -W117, -W098 */ //desactivo correcciones de  globales, y las declaraciones no usadas
 var lastsize=-1;
-var _cfg={
-	title: "LAS MULTIPLICACIONES",
-	titlestyle: "bold 27px Trebuchet MS, Helvetica, sans-serif",
-	width: 1280,
-	height: 720,
-	version: "0.5.2",
-    adaptMethod: "hybrid"
-};
 var btnListo,btnComenzar;
 var seleccionado;
 
@@ -15,6 +7,7 @@ window.onresize = resize;
 window.ondeviceorientation  = resize;
 
 function resize(){
+     var wav;
     if(lastsize!=window.innerWidth+"_"+window.innerHeight){  
         var a=parseInt(Math.min(window.innerWidth/_cfg.width, window.innerHeight/_cfg.height)*_cfg.width);
         var h=parseInt(Math.min(window.innerWidth/_cfg.width, window.innerHeight/_cfg.height)*_cfg.height);
@@ -55,20 +48,19 @@ function resize(){
                 if(aspectRatio < (16/9)){ //si el aspectratio es mayor que 16:6
                     hmar=0;
                   //  if(aspectRatio > (9/6)){ //y si es menor que 9:6
-                        wi=window.innerWidth/_cfg.width;
-                        wih=window.innerHeight/_cfg.height;
-                        
-                        
-                       
+                    
+                    wi=window.innerWidth/_cfg.width;
+                    wih=window.innerHeight/_cfg.height;
+                   wav=wi * (window.innerWidth/(window.innerWidth*wi));
                   /*  }else{
                         
                         wih=wi*(9/6);
                     }*/
                         
                 }
-                $(".noscale").css("transform","scale("+((1-wi)+1)+",1)");
-                $(".noscale").css("-webkit-transform","scale("+((1-wi)+1)+",1)");
-                $(".noscale").css("-ms-transform","scale("+((1-wi)+1)+",1)");
+                $(".noscale").css("transform","scale("+(wav)+",1)");
+                $(".noscale").css("-webkit-transform","scale("+(wav)+",1)");
+                $(".noscale").css("-ms-transform","scale("+(wav)+",1)");
                 
                 document.getElementById("superWrapper").style.transform="scale("+wi+","+wih+")";
                 document.getElementById("superWrapper").style["-webkit-transform"]="scale("+wi+","+wih+")";
