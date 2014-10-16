@@ -65,9 +65,9 @@ $(function(){
     maquina.intentosRestantes = maquina.intentosRestantes || _cfg.intentos || 3; //si existe se mantiene el valor, si no, se asigna el valor de la config, si no existe en la cofig se le asigna 3
     maquina.btnListo = new Botonui("ready");
     maquina.btnComenzar = new Botonui("restart");
-    maquina.btnInfo = new Botonui("btnInfo",{left:"97px"},{left:"0px"});
-    maquina.btnSonido = new Botonui("btnSonido",{left:"97px"},{left:"0px"});
-    maquina.instruccion= new Botonui("instruccion",{left:"1300px"},{left:"1050px"});
+    maquina.btnInfo = new Botonui("btnInfo",{right:"97px"},{right:"0px"});
+    maquina.btnSonido = new Botonui("btnSonido",{right:"97px"},{right:"0px"});
+    maquina.instruccion= new Botonui("instruccion",{right:"-300px"},{right:"0px"});
     console.log("main","asdasdasd");
     
     maquina.btnInfo.show(); //muestro boton info
@@ -172,8 +172,8 @@ $(function(){
 });
 
 function Botonui(id,pHide,pShow){
-    pHide = pHide || {top:"75px"};
-    pShow = pShow || {top:"22px"};
+    pHide = pHide || {top:"80px"};
+    pShow = pShow || {top:"13px"};
     this.showed=undefined;
     this._dom=document.getElementById(id);
 

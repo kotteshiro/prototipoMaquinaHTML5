@@ -21,8 +21,8 @@ function resize(){
         var aspectRatio=(window.innerWidth/window.innerHeight);
         switch(_cfg.adaptMethod){
             case "responsive":
-                $("#escena1").css("left",(192+((window.innerWidth-1280)/2))+"px");
-                $("#fondoEscena").css("background-position-x",(((window.innerWidth-1280)/2))+"px");
+               // $("#escena1").css("left",(192+((window.innerWidth-1280)/2))+"px");
+                //$("#fondoEscena").css("background-position-x",(((window.innerWidth-1280)/2))+"px");
                 /*if(aspectRatio < 1.7){
                     document.body.style.width=window.innerWidth+"px";
                     document.body.style["background-size"]=bgp;

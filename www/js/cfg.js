@@ -4,7 +4,7 @@ var _cfg={
 	width: 1280,
 	height: 720,
 	version: "0.5.2",
-    adaptMethod: "scale",
+    adaptMethod: "responsive",
     assets:{
         sound:[
 			{id:'INSTRUCCION',     							url:"sound/CORRECTO.mp3"},

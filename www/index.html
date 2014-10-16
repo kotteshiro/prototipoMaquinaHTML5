@@ -5,14 +5,14 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
     <!-- TODO: DEJAR LA FUENTE SIGNIKA LOCAL -->
     <link href='http://fonts.googleapis.com/css?family=Signika:300,400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="e1/css/scene.css"> <!-- estilo especial de la maquina -->
     <link rel="stylesheet" href="css/app.css"> <!-- estilo base de la maquina -->
     <link rel="stylesheet" href="css/hover.css"> <!-- animaciones para mouseHover -->
-     <script src="e1/js/cfg.js"></script>
+     <script src="js/cfg.js"></script>
      <script src="js/jquery-2.1.1.min.js"></script>
      <script src="js/soundjs-0.5.2.min.js"></script>
      <script src="js/sonido2.js"></script>
@@ -26,14 +26,16 @@
     <!-- content -->
     <div id="superWrapper" class=".animsplash">
         <div id="fondoEscena"></div>
-        <div id="escena1" class="escena noscale">
+        <div id="escena1" class="escena ">
+            
             <div id="numeroRandom" class="textoNumero">1.<span class="destacado">8</span>42</div>
             <div id="digito" class="digito">4</div>
-
-            <button id="opcion1" class="boton grow-rotate sonidoover1"><span class="textoBoton">80</span></button>
-            <button id="opcion2" class="boton grow-rotate sonidoover1"><span class="textoBoton">800</span></button>
-            <button id="opcion3" class="boton grow-rotate sonidoover1"><span class="textoBoton">8.000</span></button>
-            <button id="opcion4" class="boton grow-rotate sonidoover1"><span class="textoBoton">8</span></button>
+            <div id="zonaBotones">
+                <button id="opcion1" class="boton botonVerde grow-rotate sonidoover1"><span class="textoBoton">80</span></button>
+                <button id="opcion2" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">800</span></button>
+                <button id="opcion3" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">8.000</span></button>
+                <button id="opcion4" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">8</span></button>
+            </div>
         </div>
         
         <div id="blocklayer"></div>
@@ -45,21 +47,29 @@
         <div id="header">
             <div id="bgmid">
                 <div id="hbl" class="headpart"></div>
-                <div id="hbm" class="headpart"></div>
-                <div id="hbr" class="headpart noscale"></div>
+                <div id="hewrap">
+            
+                    <div id="hbm" class="headpart">
+                        <div id="titulo" class=""> Titulo de la maquina </div>
+                    </div>
+                </div>
+                <div id="hbr" class="headpart"></div>
             </div>
-            <div id="titulo" class="noscale"> Titulo de la maquina </div>
         </div>
         <div id="footer">
             <div id="bgfoot">
                 <div id="fbl" class="footpart"></div>
-                <div id="fbm" class="footpart"></div>
+                <div id="hewrap">
+                     <div id="fbm" class="footpart"></div>
+                </div>
                 <div id="fbr" class="footpart"></div>
             </div>
-            <button id="ready" class="botonesui animsBtnUI noscale"></button>
-            <button id="restart" class="botonesui animsBtnUI noscale"></button>
+            
+                <button id="ready" class="botonesui animsBtnUI "></button>
+                <button id="restart" class="botonesui animsBtnUI "></button>
+            
         </div>
-        <div id="overallmisc noscale">
+        <div id="overallmisc ">
             <div id="good" class="popsplash animsplash"></div>
             <div id="tryagain" class="popsplash animsplash"></div>
             <div id="seeanswer" class="popsplash animsplash"></div>

@@ -17,7 +17,7 @@ window.app = window.app || {} ;         // there should only be one of these, bu
 // Runs after underlying device native code and webview/browser is ready.
 // Where you should "kick off" your application by initializing app events, etc.
 
-// NOTE: Customize this function to initialize your application, as needed.
+// NO1TE: Customize this function to initialize your application, as needed.
 
 app.initEvents = function() {
     "use strict" ;

@@ -6,12 +6,11 @@
 @-ms-viewport { user-zoom: fixed ; }                                    @viewport { user-zoom: fixed ; }
 
 *{
-    position: absolute;
     text-align: center;
     background-size: 100% 100%;
     background-clip:border-box;
-    /*font-family: Verdana,Geneva,Kalimati,sans-serif;*/
     font-family: 'Signika', sans-serif;
+    font-size: 16px;
     font-weight: 600; 
 }
 span {
@@ -35,10 +34,15 @@ body {
     background: white ;
     color: black ;
     background-image: url("../img/mainbg.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     margin: 0px;
     padding: 0px;
-     
+    background-position: center center;
+}
+div{
+    float:left;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
 }
 button{
    background: none;
@@ -67,9 +71,10 @@ input, textarea  {
 #header{
   
     height: 78px;
-    width: 1280px;
-    top: 5px;
+    width: 100%;
+    top: 0px;
     text-align: left;
+    position: fixed;
 }
 
 
@@ -77,7 +82,7 @@ input, textarea  {
     text-align: left;
     font-size: 2em;
     padding-top: 10px;
-    padding-left: 60px;
+    padding-left: 0px;
     color: #FFF;
 }
 
@@ -85,11 +90,15 @@ input, textarea  {
     width: 370px;
     height: 225px;
     display: block;
-    left: 459px;
-    top: 260px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     -ms-transform: scale(0,0); /* IE 9 */
     -webkit-transform: scale(0,0); /* Chrome, Safari, Opera */
     transform: scale(0,0);
+    margin: auto;
+    position: fixed;
 }
 
 #good{
@@ -113,12 +122,13 @@ input, textarea  {
     background-image: url(../img/seeanswer.png);
 }
 .botonesui{
+   position: absolute;
     width: 170px;
     height: 75px;
     display: block;
-    /*top: 20px; posicion visible*/
-    top: 75px;
-    right: 20px;
+    top: -58px;
+    right: 5%;
+    margin: auto;
 }
 .animsplash{
     -webkit-transition-duration: 0.3s;
@@ -127,7 +137,9 @@ input, textarea  {
     animation-timing-function: cubic-bezier(.45,.96,.81,.63);
 }
 #superWrapper{
-    opacity: 0;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
 }
 #blocklayer{
     display: none;
@@ -151,7 +163,7 @@ input, textarea  {
     cursor: pointer;
 }
 #bgmid{
-    width: 1280px;
+    width: 100%;
     height: 70px;
 }
 #hbl{      
@@ -159,8 +171,10 @@ input, textarea  {
 }
 #hbm{
     background-image: url(../img/head_mid.png);
-    width: 83.8%;
+    width: 100%;
     background-repeat: repeat-x;
+    text-align: left;
+        
 }
 #hbr{
     background-image: url(../img/head_right.png);
@@ -173,7 +187,7 @@ input, textarea  {
     background-repeat: no-repeat;
     display: inline-block;
     position: relative;
-    margin: -2px;
+    margin: 0px;
     padding: 0px;
     border: none;
 }
@@ -181,19 +195,21 @@ input, textarea  {
 /*   FOOTER   */
 #footer{
  /*  background-image: url(../img/foot.png);*/
-    height: 78px;
-    width: 1280px;
-    top: 645px;
+    height: 67px;
+    width: 100%;
+    bottom: 0px;
     overflow: hidden;
     background-size: initial;
     background-repeat: no-repeat;
     background-position: bottom;
+    position: fixed;
+    text-align: center;
 }
 
 #bgfoot{
-    width: 1280px;
+    width: inherit;
     height: 70px;
-    bottom: -5px;
+    bottom: 0px;
 }
 
 #fbl{      
@@ -202,7 +218,7 @@ input, textarea  {
 
 #fbm{
     background-image: url(../img/foot_mid.png);
-    width: 86%;
+    width: 100%;
     background-repeat: repeat-x;
 }
 
@@ -218,18 +234,19 @@ input, textarea  {
     background-repeat: no-repeat;
     display: inline-block;
     position: relative;
-    margin: -2px;
+    margin: 0px;
     padding: 0px;
     border: none;
 }
 
 #botonesUI{
-    width: 100px;
+    width: 200px;
     height: 200px;
-    left: 1210px;
+    right: 0px;
     top: 160px;
     z-index: 20;
     text-align: left;
+    position: fixed;
 }
 
 #btnInfo{
@@ -238,6 +255,9 @@ input, textarea  {
     background-image: url(../img/btn-info.png);
     width: 97px;
     height: 88px;
+    display: block;
+    right: 0px;
+    position: absolute;
 }
 #btnInfo:hover{
      background-image: url(../img/btn-info-on.png);
@@ -249,7 +269,9 @@ input, textarea  {
     background-image: url(../img/btn-sonido.png);
     width: 97px;    height: 88px;
     top: 68px;
-    left: -2px;
+    right: 0px;
+    position: absolute;
+    display: block;
 }
 .btnSonidoMuted, .btnSonidoMuted:hover {
     background-image: url(../img/btn-sonido-off.png) !important;
@@ -263,8 +285,35 @@ input, textarea  {
     background-image: url(../img/instruccion.png);
     width: 255px;
     height: 202px;
-    left: 1050px;
+    right: 0px;
     top: 160px;
     z-index: 22;
     text-align: left;
+    position: fixed;
+}
+#hewrap {
+    width: 100%;
+    height: 100%;
+    margin-left: -90px;
+    margin-right: -90px;
+    padding-right: 90px;
+    padding-left: 90px;
+}
+
+#overallmisc{
+    left: 0;
+    right: 0;
+}
+
+
+.botonVerde{
+    width: 13em;
+    height: 6em;
+    background: none;
+    background-color: #D2E134;
+    border: 0.2em #EEE solid;
+    border-radius: 1em;
+    margin: 1em;
+    box-shadow: 5px 4px 7px #000000 !important;
+
 }
