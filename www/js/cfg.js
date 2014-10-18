@@ -1,5 +1,5 @@
 var _cfg={
-	title: "LAS MULTIPLICACIONES",
+	title: "Signo",
 	titlestyle: "bold 27px Trebuchet MS, Helvetica, sans-serif",
 	width: 1280,
 	height: 720,

@@ -5,13 +5,14 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
     <!-- TODO: DEJAR LA FUENTE SIGNIKA LOCAL -->
     <link href='http://fonts.googleapis.com/css?family=Signika:300,400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="e1/css/scene.css"> <!-- estilo especial de la maquina -->
     <link rel="stylesheet" href="css/app.css"> <!-- estilo base de la maquina -->
     <link rel="stylesheet" href="css/hover.css"> <!-- animaciones para mouseHover -->
+     <script src="js/cssfx.js"></script>
      <script src="js/cfg.js"></script>
      <script src="js/jquery-2.1.1.min.js"></script>
      <script src="js/soundjs-0.5.2.min.js"></script>
@@ -25,19 +26,32 @@
 <body>
     <!-- content -->
     <div id="superWrapper" class=".animsplash">
-        <div id="fondoEscena"></div>
-        <div id="escena1" class="escena ">
-            
-            <div id="numeroRandom" class="textoNumero">1.<span class="destacado">8</span>42</div>
-            <div id="digito" class="digito">4</div>
-            <div id="zonaBotones">
-                <button id="opcion1" class="boton botonVerde grow-rotate sonidoover1"><span class="textoBoton">80</span></button>
-                <button id="opcion2" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">800</span></button>
-                <button id="opcion3" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">8.000</span></button>
-                <button id="opcion4" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">8</span></button>
+        <div id="fondoEscena">
+            <div id="escena1" class="escena boxwrap">
+                <div id="zonanumero">
+                    <div id="numeroRandom" class="textoNumero">1.<span class="destacado">8</span>42</div>
+                </div>
+                <div class="boxvh">
+                    <div id="zonaDigito" class="">
+                    <div id="digito" class="digito centrado">4</div>
+                </div>
+                    <div id="zonaBotones" class="">
+                    
+                    <div class="wrapibotones centrado">
+                        <div class="botan">
+                            <button id="opcion1" class="boton botonVerde grow-rotate sonidoover1"><span class="textoBoton">80</span></button>
+                            <button id="opcion2" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">800</span></button>
+                        </div>
+                        <div class="botan">
+                            <button id="opcion3" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">8.000</span></button>
+                            <button id="opcion4" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">8</span></button>
+                        </div>
+                    </div>
+                        
+                </div>
+                </div>
             </div>
         </div>
-        
         <div id="blocklayer"></div>
         <div id="instruccion" class="animsBtnUI"></div>
         <div id="botonesUI">

@@ -21,6 +21,12 @@ function resize(){
         var aspectRatio=(window.innerWidth/window.innerHeight);
         switch(_cfg.adaptMethod){
             case "responsive":
+                document.body.style.width=window.innerWidth+"px";
+                document.body.style.height=window.innerHeight+"px";
+                var fntsi=((Math.ceil((window.innerWidth*window.innerHeight)/1000)*8)/490)+8;
+                fntsi=(fntsi<8) ? 8 : fntsi;
+                fntsi=(fntsi>16) ? 16 : fntsi;
+               document.body.style.fontSize=fntsi+"px";
                // $("#escena1").css("left",(192+((window.innerWidth-1280)/2))+"px");
                 //$("#fondoEscena").css("background-position-x",(((window.innerWidth-1280)/2))+"px");
                 /*if(aspectRatio < 1.7){

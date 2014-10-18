@@ -1,20 +1,24 @@
+.cssfx{
+    
+}
+
 #fondoEscena{
-    background-image: url(../img/fondo.png);
+   /* background-image: url(../img/fondo.png);*/
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
+    float: none;
     /*left: 14px;*/
-    display: fixed;
+    /*positio: fixed;*/
 }
 #escena1{
     width: 100%;
-    height: 100%;
-    display: block;
-    margin: 0px;
-    padding: 0px;
-    left: 200px;
-    top: 75px;
-    background-color: gray;
+    height: 85%;
+    margin: auto;
+    border: 1px #FFF solid;
+    position: fixed;
+    float: none;
+    margin-top: 4.3em;
 }
 
 .boton{
@@ -55,29 +59,149 @@
     top: 390px;
 }
 .textoBoton{
-    font-size: 60px;
+    font-size: 4em;
     font-weight: bold;
 }
 .textoNumero{
-    font-size: 60pt;
+    font-size: 3em;
     font-weight: bold;
-    left: 4em;
-    top: 1.26em;
-    width: 240px;
+    width: 11.89em;
+    height: 3.05em;
+    padding-top: 1.7em;
+    float: none;
+    margin: auto;
+    
 }
 .destacado{
     color:#FF0000;
+    font-size: inherit;
 }
 .btnSelected{
     -ms-transform: scale(1.2,1.2) !important; /* IE 9 */
     -webkit-transform: scale(1.2,1.2) !important; /* Chrome, Safari, Opera */
     transform: scale(1.2,1.2) !important;
+    box-shadow: 0px 0px 26px 4px #FFFFFF !important;
 }
 .digito{
-    font-size: 54pt;
+    font-size: 5em;
     font-weight: bold;
     color: #FFF;
-    left: 5.1em;
-    top: 4.05em;
     width: 2em;
+    height: 2.4em;
+    padding-top: 0.55em;
+    text-align: center;
+    padding-right: 0.18em;
+}
+#numeroRandom {
+    background-image: url(../img/cuadro1.png);
+        
+}
+
+#digito {
+    background-image: url(../img/cuadro2.png)
+}
+
+.centrado {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+.fullWidth {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.boxwrap {
+    display: -webkit-box;
+	display: -moz-box;
+	display: box;
+
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-orient: vertical;
+
+	-webkit-box-align: stretch;
+	-moz-box-align: stretch;
+	box-align: stretch;
+
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
+	box-direction: normal;
+
+	-webkit-box-pack: justify;
+	-moz-box-pack: justify;
+	box-pack: justify;
+}
+
+#zonaDigito {
+    float: none;
+    position: relative;
+    -webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+}
+
+#zonaBotones {
+    -webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+    float: none;
+    position: relative;
+    font-size: 0.8em;
+    max-height: 40%;
+}
+
+#zonanumero {
+    float: none;
+    position: relative;
+    -webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	box-flex: 1;
+}
+.botan{
+    float: none;
+    display: inline-block;
+}
+.boxvh {
+    float:none;
+    
+    -webkit-box-flex: 3;
+    -moz-box-flex: 3;
+    box-flex: 3;
+    
+    display: -webkit-box;
+	display: -moz-box;
+	display: box;
+
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-orient: vertical;
+
+	-webkit-box-align: stretch;
+	-moz-box-align: stretch;
+	box-align: stretch;
+
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
+	box-direction: normal;
+
+	-webkit-box-pack: justify;
+	-moz-box-pack: justify;
+	box-pack: justify;
+}
+
+@media only screen and (orientation : landscape) {
+.boxvh {
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	box-orient: horizontal;
+}
+.botan {
+    display: block;
+}
+#bgfoot {
+    display: none;
+}
 }
