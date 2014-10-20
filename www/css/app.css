@@ -38,6 +38,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-position: center center;
+    background-size: cover;
     font-size: 16px;
 }
 div{
@@ -80,9 +81,9 @@ input, textarea  {
 
 
 #titulo{
-    text-align: left;
-    font-size: 2em;
-    padding-top: 10px;
+     text-align: left;
+    font-size: 1.8em;
+    padding-top: 0.4em;
     padding-left: 0px;
     color: #FFF;
 }
@@ -112,25 +113,27 @@ input, textarea  {
 }
 
 #ready{
-    background-image: url(../img/btn-listo.png);
+    background-image: url(../img/btn-listo-v.png);
 }
 
 #restart{
-    background-image: url(../img/btn-comenzar.png);
+    background-image: url(../img/btn-comenzar-v.png);
 }
 
 
 #seeanswer{
     background-image: url(../img/seeanswer.png);
 }
+
 .botonesui{
-   position: absolute;
-    width: 170px;
-    height: 75px;
+    width: 4em;
+    height: 3.5em;
     display: block;
-    top: -58px;
-    right: 5%;
+   /* top: 180px;
+    right: 5%;*/
     margin: auto;
+    background-size: cover !important;
+    background-repeat: no-repeat;
 }
 .animsplash{
     -webkit-transition-duration: 0.3s;
@@ -148,7 +151,7 @@ input, textarea  {
     background-color: #FFFFFF;
     left: 0px;
     top: 0px;
-    opacity: 0.3;
+    opacity: 0.1;
     width: 100%;
     height: 100%;
     position: fixed; 
@@ -167,7 +170,7 @@ input, textarea  {
 }
 #bgmid{
     width: 100%;
-    height: 70px;
+    height: 5em;
 }
 #hbl{      
     background-image: url(../img/head_left.png);
@@ -177,14 +180,14 @@ input, textarea  {
     width: 100%;
     background-repeat: repeat-x;
     text-align: left;
-        
+    background-size: contain;  
 }
 #hbr{
     background-image: url(../img/head_right.png);
 }
 .headpart{
     height: 5em;
-    width: 90px;
+    width: 3em;
     background-size: inherit;
     background-position: top;
     background-repeat: no-repeat;
@@ -197,37 +200,19 @@ input, textarea  {
 
 /*   FOOTER   */
 #footer{
- /*  background-image: url(../img/foot.png);*/
-    height: 67px;
+    height: 3em;
     width: 100%;
     bottom: 0px;
     overflow: hidden;
-    background-size: initial;
-    background-repeat: no-repeat;
-    background-position: bottom;
+    background-size: contain;
     position: fixed;
     text-align: center;
-}
-
-#bgfoot{
-    width: inherit;
-    height: 70px;
-    bottom: 0px;
-}
-
-#fbl{      
-    background-image: url(../img/foot_left.png);
-}
-
-#fbm{
-    background-image: url(../img/foot_mid.png);
-    width: 100%;
+    background-image: url(../img/bottom.png);
     background-repeat: repeat-x;
+    background-position: bottom;
+    display: none;
 }
 
-#fbr{
-    background-image: url(../img/foot_right.png);
-}
 
 .footpart{
     height: 100%;
@@ -243,10 +228,9 @@ input, textarea  {
 }
 
 #botonesUI{
-    width: 200px;
-    height: 200px;
-    right: 0px;
-    top: 160px;
+   
+   /* right: 0px;
+    top: 6em;*/
     z-index: 20;
     text-align: left;
     position: fixed;
@@ -255,26 +239,29 @@ input, textarea  {
 #btnInfo{
     background: none;
     border: none;
-    background-image: url(../img/btn-info.png);
-    width: 97px;
-    height: 88px;
+    background-image: url(../img/btn-info-v.png);
     display: block;
-    right: 0px;
-    position: absolute;
+    position: relative;
 }
+
+
 #btnInfo:hover{
-     background-image: url(../img/btn-info-on.png);
+     background-image: url(../img/btn-info-on-v.png);
 }
 
 #btnSonido{
     background: none;
     border: none;
     background-image: url(../img/btn-sonido.png);
-    width: 97px;    height: 88px;
-    top: 68px;
+    top: 4em;
     right: 0px;
     position: absolute;
     display: block;
+    
+    width: 4em;
+    height: 3.3em;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 .btnSonidoMuted, .btnSonidoMuted:hover {
     background-image: url(../img/btn-sonido-off.png) !important;
@@ -286,21 +273,24 @@ input, textarea  {
 
 #instruccion{
     background-image: url(../img/instruccion.png);
-    width: 255px;
-    height: 202px;
-    right: 0px;
-    top: 160px;
     z-index: 22;
     text-align: left;
     position: fixed;
+    margin-left: -100px;
+    width: 21em;
+    height: 15em;
+    top: 50%;
+    left: 45.6%;
+    margin-left: -10em;
+    margin-top: -7.5em;
 }
 #hewrap {
     width: 100%;
     height: 100%;
-    margin-left: -90px;
-    margin-right: -90px;
-    padding-right: 90px;
-    padding-left: 90px;
+    margin-left: -3em;
+    margin-right: -3em;
+    padding-right: 3em;
+    padding-left: 3em;
 }
 
 #overallmisc{
@@ -319,4 +309,8 @@ input, textarea  {
     margin: 1em;
     box-shadow: 5px 4px 7px #000000;
     font-size: inherit;
+}
+
+.botonptwo {
+    top: 4em;
 }

@@ -64,27 +64,29 @@ maquina._block=function(vl){
 $(function(){
     maquina.intentosRestantes = maquina.intentosRestantes || _cfg.intentos || 3; //si existe se mantiene el valor, si no, se asigna el valor de la config, si no existe en la cofig se le asigna 3
     maquina.btnListo = new Botonui("ready");
-    maquina.btnComenzar = new Botonui("restart");
-    maquina.btnInfo = new Botonui("btnInfo",{right:"97px"},{right:"0px"});
-    maquina.btnSonido = new Botonui("btnSonido",{right:"97px"},{right:"0px"});
-    maquina.instruccion= new Botonui("instruccion",{right:"-300px"},{right:"0px"});
+    maquina.btnComenzar = new Botonui("restart",{left:"75px"},{left:"0px"});
+    maquina.btnInfo = new Botonui("btnInfo",{left:"75px"},{left:"0px"});
+    maquina.btnSonido = new Botonui("btnSonido",{left:"75x"},{left:"0px"});
+    maquina.instruccion= new Botonui("instruccion",{left:"110%", "margin-left":"0px"},{left:"45.6%", "margin-left":"-100px"});
     console.log("main","asdasdasd");
     
     maquina.btnInfo.show(); //muestro boton info
-    maquina.btnSonido.show(); //muestro boton Sonido
+   // maquina.btnSonido.show(); //muestro boton Sonido
     maquina.instruccion.hide(); //muestro instruccion
     maquina.btnListo.hide(); //oculto boton listo
     maquina.btnComenzar.hide(); //oculto boton comenzar
-   
+   $("#wraperinstruccion").hide();
     
     maquina.btnInfo.btnclick=function(){
         
         if(maquina.instruccion.showed){
             maquina.instruccion.hide();
             sonido.stop("INSTRUCCION");
+            $("#wraperinstruccion").hide();
             
         }else{
             maquina.instruccion.show();
+            $("#wraperinstruccion").show();
             sonido.play("INSTRUCCION");
         }
         
@@ -172,8 +174,8 @@ $(function(){
 });
 
 function Botonui(id,pHide,pShow){
-    pHide = pHide || {top:"80px"};
-    pShow = pShow || {top:"13px"};
+    pHide = pHide ||  {left:"75px"};
+    pShow = pShow || {left:"0px"};
     this.showed=undefined;
     this._dom=document.getElementById(id);
 
@@ -182,6 +184,7 @@ function Botonui(id,pHide,pShow){
         for(var i in pShow){
             this._dom.style[i]=pShow[i];
         }
+        $(this._dom).show();
     };
     
     this.hide=function(){
@@ -189,6 +192,8 @@ function Botonui(id,pHide,pShow){
         for(var i in pHide){
             this._dom.style[i]=pHide[i];
         }
+        $(this._dom).hide();
+        //if(this.btnclick) this.btnclick();
     };
 } /*/*/
 

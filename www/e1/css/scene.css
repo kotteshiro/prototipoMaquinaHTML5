@@ -10,15 +10,21 @@
     float: none;
     /*left: 14px;*/
     /*positio: fixed;*/
+    text-align: center;
+    overflow: hidden;
 }
 #escena1{
     width: 100%;
     height: 85%;
     margin: auto;
-    border: 1px #FFF solid;
-    position: fixed;
+    /* border: 1px #FFF solid; */
+    position: relative;
     float: none;
     margin-top: 4.3em;
+    max-width: 850px;
+    max-height: 540px;
+    padding-right: 1em;
+  /*  padding-left: 3em;*/
 }
 
 .boton{
@@ -65,7 +71,7 @@
 .textoNumero{
     font-size: 3em;
     font-weight: bold;
-    width: 11.89em;
+  /*  width: 11.89em;*/
     height: 3.05em;
     padding-top: 1.7em;
     float: none;
@@ -80,7 +86,7 @@
     -ms-transform: scale(1.2,1.2) !important; /* IE 9 */
     -webkit-transform: scale(1.2,1.2) !important; /* Chrome, Safari, Opera */
     transform: scale(1.2,1.2) !important;
-    box-shadow: 0px 0px 26px 4px #FFFFFF !important;
+    box-shadow: 0px 0px 26px 4px #0078b1 !important;
 }
 .digito{
     font-size: 5em;
@@ -159,6 +165,8 @@
     -webkit-box-flex: 1;
 	-moz-box-flex: 1;
 	box-flex: 1;
+    max-width: 670px;
+    margin: auto;
 }
 .botan{
     float: none;
@@ -174,14 +182,14 @@
     display: -webkit-box;
 	display: -moz-box;
 	display: box;
-
+    
 	-webkit-box-orient: vertical;
 	-moz-box-orient: vertical;
 	box-orient: vertical;
 
-	-webkit-box-align: stretch;
-	-moz-box-align: stretch;
-	box-align: stretch;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	box-align: center;
 
 	-webkit-box-direction: normal;
 	-moz-box-direction: normal;
@@ -191,17 +199,95 @@
 	-moz-box-pack: justify;
 	box-pack: justify;
 }
-
-@media only screen and (orientation : landscape) {
-.boxvh {
-	-webkit-box-orient: horizontal;
-	-moz-box-orient: horizontal;
-	box-orient: horizontal;
-}
-.botan {
+#menubar{
     display: block;
+    position: fixed;
+    float:none;
+    
+    height: 4em;
+    
+    -webkit-box-flex: 3;
+    -moz-box-flex: 3;
+    box-flex: 3;
+    
+    display: -webkit-box;
+	display: -moz-box;
+	display: box;
+    
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-orient: vertical;
+
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	box-align: center;
+
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
+	box-direction: normal;
+
+	-webkit-box-pack: justify;
+	-moz-box-pack: justify;
+	box-pack: justify;
+    
+    top: 7em;
+    right: 0px;
 }
-#bgfoot {
-    display: none;
+#menubar >*{
+    position: absolute;
 }
+
+    
+@media only screen and (orientation : landscape) {
+    .boxvh {
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        box-orient: horizontal;
+    }
+    .botan {
+        display: block;
+    }
+    #footer {
+        display: none !important;
+    }
 }
+
+@media only screen and (max-height : 290px) {
+/* Styles */
+    #escena1 {
+        margin-top: 0em;
+    }
+    #header {
+        display: none;
+    }
+    body{
+        font-size: 7px !important;
+    }
+    
+}
+
+
+
+@media only screen and (max-height : 590px) {
+/* Styles */
+    #footer {
+        display: none !important;
+    }
+}
+#wraperinstruccion {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    opacity: .4;
+}
+@media only screen and (min-height : 700px) {
+/* Styles */
+    #escena1 {
+        margin-top: 6.3em;
+    }
+}
+
+

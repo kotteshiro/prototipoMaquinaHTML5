@@ -13,10 +13,12 @@ maquina.setup=function(){
     
     $("#superWrapper").css("opacity",1); //tmp
      
-    $(".boton").click(function(am){ //se selecciona una opcion a la vez
+    $(".boton").click(function(event){ //se selecciona una opcion a la vez
+        
         $(".boton").removeClass("btnSelected"); //quitamos la clase de seleccion(btnSelected) (deseleccionamos todo)
-        $(am.currentTarget).addClass("btnSelected"); // aplicamos la clase de seleccion al elemento actual
+        $(event.currentTarget).addClass("btnSelected"); // aplicamos la clase de seleccion al elemento actual
         maquina.check();
+        
     });
     maquina.start();
     //alert("setup");
@@ -30,41 +32,40 @@ maquina.start=function(){
     //TO-DO
     var numaevaluar = Math.floor((Math.random() * 9000) + 1000) ;
     var pos;
-    var numdestacado;
+    
+    
+    
     
     do{
-        pos = Math.floor((Math.random() * 5) + 0);
-        
-        numdestacado = numaevaluar.toLocaleString().charAt(pos);
-        
-    }while(pos == "1" || numdestacado == "0");
-             
-    console.log("pos:" + pos);
-
-    console.log(numdestacado);
+        pos = Math.floor((Math.random() * 4) + 0);
+    }while(numaevaluar.toString().charAt(pos)=="0");
     
-    var num = numaevaluar.toLocaleString().substring(0,pos);
-    var numfinal = numaevaluar.toLocaleString().substring(pos+1,5);
+    console.log(numaevaluar);
     
+    
+    var numdestacado = numaevaluar.toString().charAt(pos);
+    var num = numaevaluar.toString().substring(0,pos);
+    var numfinal = numaevaluar.toString().substring(pos+1,4);
     var destacado = "<span class='destacado'>"+numdestacado+"</span>";
     console.log("switch", pos);
-    switch (pos.toString()){
-            case "0": 
-                maquina.correcta=((numdestacado * 1000).toLocaleString());
-            break;
-            case "2": 
-                maquina.correcta=((numdestacado * 100).toLocaleString());
-            break;
-            case "3": 
-                maquina.correcta=((numdestacado * 10).toLocaleString());
-            break;
-            case "4": 
-                maquina.correcta=((numdestacado * 1).toLocaleString());
-            break;
-            default:
-                maquina.correcta="0";
-            }
     
+    
+    switch (pos.toString()){
+        case "0": 
+            maquina.correcta=numdestacado * 1000;
+        break;
+        case "1": 
+            maquina.correcta=numdestacado * 100;
+        break;
+        case "2": 
+            maquina.correcta=numdestacado * 10;
+        break;
+        case "3": 
+            maquina.correcta=numdestacado * 1;
+        break;
+        default:
+            maquina.correcta="0";
+    }
     
     $("#numeroRandom").html(num + destacado + numfinal);
     
@@ -74,12 +75,10 @@ maquina.start=function(){
 
     items.sort(function() {return 0.5 - Math.random();});
  
-    $("#opcion"+items[0]+" .textoBoton").html((numdestacado * 1).toLocaleString());
-    $("#opcion"+items[1]+" .textoBoton").html((numdestacado * 10).toLocaleString());
-    $("#opcion"+items[2]+" .textoBoton").html((numdestacado * 100).toLocaleString());
-    $("#opcion"+items[3]+" .textoBoton").html((numdestacado * 1000).toLocaleString());
-    
-    
+    $("#opcion"+items[0]+" .textoBoton").html(numdestacado * 1);
+    $("#opcion"+items[1]+" .textoBoton").html(numdestacado * 10);
+    $("#opcion"+items[2]+" .textoBoton").html(numdestacado * 100);
+    $("#opcion"+items[3]+" .textoBoton").html(numdestacado * 1000);
 };
 
 maquina.isReady=function(){
@@ -151,7 +150,7 @@ maquina.block=function(bloquear){
     bloquear = bloquear || true;
     //parametro bloquear booleano, si es true bloquea, de lo contrario desbloquea
     //TO-DO
-    if(bloquear){
+        if(bloquear){
         //bloquear todo 
     }else{
         //permitir interaccion de todo

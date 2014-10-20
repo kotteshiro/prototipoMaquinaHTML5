@@ -23,7 +23,7 @@ function resize(){
             case "responsive":
                 document.body.style.width=window.innerWidth+"px";
                 document.body.style.height=window.innerHeight+"px";
-                var fntsi=((Math.ceil((window.innerWidth*window.innerHeight)/1000)*8)/490)+8;
+                var fntsi=Math.ceil(((Math.ceil((window.innerWidth*window.innerHeight)/1000)*8)/490)+8);
                 fntsi=(fntsi<8) ? 8 : fntsi;
                 fntsi=(fntsi>16) ? 16 : fntsi;
                document.body.style.fontSize=fntsi+"px";
