@@ -1,5 +1,6 @@
 var _cfg={
 	title: "Valor posicional de una cifra",
+	instruccion: "Observa el dígito que está destacado e identifica cuál es su equivalencia.",
 	titlestyle: "bold 27px Trebuchet MS, Helvetica, sans-serif",
 	width: 1280,
 	height: 720,

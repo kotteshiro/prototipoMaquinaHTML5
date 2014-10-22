@@ -27,6 +27,20 @@ function resize(){
                 fntsi=(fntsi<8) ? 8 : fntsi;
                 fntsi=(fntsi>16) ? 16 : fntsi;
                document.body.style.fontSize=fntsi+"px";
+                
+                if(($("#titulo").parent().width()-$("#titulo").width()-$("#logo").width())<=0){
+                    $("#logo").hide();
+                }else{
+                    $("#logo").show();
+                    
+                    $("#titulo").css("font-size","1.8em");
+                }
+                
+                while((($("#titulo").parent().width()-$("#titulo").width()-$("#logo").width())<=0)){
+                    
+                    $("#titulo").css("font-size",(parseInt($("#titulo").css("font-size"))-1)+"px");
+                }
+                
                // $("#escena1").css("left",(192+((window.innerWidth-1280)/2))+"px");
                 //$("#fondoEscena").css("background-position-x",(((window.innerWidth-1280)/2))+"px");
                 /*if(aspectRatio < 1.7){
@@ -92,6 +106,23 @@ function resize(){
     }
 }
 
-
+function justNumbers(e)
+{
+    var keynum = window.event ? window.event.keyCode : e.which;
+    if ((keynum == 8) || (keynum == 46)){
+        return true;
+    }
+    
+    return /\d/.test(String.fromCharCode(keynum));
+}
+$(function(){
+    $("input[type='number']").keypress(justNumbers);
+    $("input[type='number']").keyup(function(a){ 
+        if(parseInt($(this).val()) > parseInt($(this).attr("max"))){
+          var valo=$(this).val();
+          $(this).val(valo.toString().substring(0,valo.length-1));
+        }
+      });
+});
 
 console.log("end base.js");

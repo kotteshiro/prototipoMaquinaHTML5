@@ -74,7 +74,7 @@ maquina.start=function(){
 
     items.sort(function() {return 0.5 - Math.random();});
  
-    $("#opcion"+items[0]+" .textoBoton").html((numdestacado * 1).toLocaleString());
+    $("#opcion"+items[0]+" .textoBoton").html((numdestacado * 1).toLocaleString("CL"));
     $("#opcion"+items[1]+" .textoBoton").html((numdestacado * 10).toLocaleString());
     $("#opcion"+items[2]+" .textoBoton").html((numdestacado * 100).toLocaleString());
     $("#opcion"+items[3]+" .textoBoton").html((numdestacado * 1000).toLocaleString());

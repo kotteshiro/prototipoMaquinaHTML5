@@ -66,26 +66,39 @@ input, textarea  {
     -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
 }
 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .align-center {
     text-align: center ;
 }
 
 #header{
-  
-    height: 78px;
+    height: 4.9em;
     width: 100%;
     top: 0px;
     text-align: left;
     position: fixed;
+    overflow: hidden;
 }
 
 
 #titulo{
-     text-align: left;
+    text-align: left;
     font-size: 1.8em;
-    padding-top: 0.4em;
+    margin-top: 0.4em;
     padding-left: 0px;
     color: #FFF;
+    height: 1.2em;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
 }
 
 .popsplash{
@@ -112,13 +125,20 @@ input, textarea  {
     background-image: url(../img/tryagain.png);
 }
 
+
+/*** Botones  derecha  ***/
 #ready{
-    background-image: url(../img/btn-listo-v.png);
+    background-color: #F6A523;
+    background-image: url(../img/btnbg-listo.png);
+
 }
 
 #restart{
-    background-image: url(../img/btn-comenzar-v.png);
+    background-color: #6DB42D;
+    background-image: url(../img/btnbg-comenzar.png);
 }
+
+
 
 
 #seeanswer{
@@ -126,7 +146,7 @@ input, textarea  {
 }
 
 .botonesui{
-    width: 4em;
+    width: 3.5em;
     height: 3.5em;
     display: block;
    /* top: 180px;
@@ -134,7 +154,66 @@ input, textarea  {
     margin: auto;
     background-size: cover !important;
     background-repeat: no-repeat;
+    border: none;
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
+    background-position-x: 0em !important;
+    background-position-y: center !important;
+    background-repeat: no-repeat !important;
+    right: 0px;
+    background-size: 13em !important;
 }
+
+
+#botonesUI{
+   /* right: 0px;
+    top: 6em;*/
+    z-index: 20;
+    text-align: left;
+    position: fixed;
+}
+
+
+.botonesui:hover {
+    width: 13em;
+    background-position-x: left !important;
+}
+
+#btnInfo {
+    background: none;
+    background-color: #D61712;
+    background-image: url(../img/btnbg-instruccion.png);
+    display: block;
+    position: relative;
+    
+}
+
+
+
+
+#btnSonido{
+    background: none;
+    border: none;
+    background-image: url(../img/btn-sonido.png);
+    top: 4em;
+    right: 0px;
+    position: absolute;
+    display: block;
+    
+    width: 4em;
+    height: 3.3em;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.btnSonidoMuted, .btnSonidoMuted:hover {
+    background-image: url(../img/btn-sonido-off.png) !important;
+}
+
+
+
+
+/* end botones */
 .animsplash{
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
@@ -172,19 +251,26 @@ input, textarea  {
     width: 100%;
     height: 5em;
 }
+
+/* Header */
+
 #hbl{      
     background-image: url(../img/head_left.png);
 }
+
 #hbm{
     background-image: url(../img/head_mid.png);
     width: 100%;
     background-repeat: repeat-x;
     text-align: left;
-    background-size: contain;  
+    /*background-size: contain; */
+    background-size: auto 100%; 
 }
+
 #hbr{
     background-image: url(../img/head_right.png);
 }
+
 .headpart{
     height: 5em;
     width: 3em;
@@ -197,7 +283,7 @@ input, textarea  {
     padding: 0px;
     border: none;
 }
-
+/*end header */
 /*   FOOTER   */
 #footer{
     height: 3em;
@@ -227,63 +313,22 @@ input, textarea  {
     border: none;
 }
 
-#botonesUI{
-   
-   /* right: 0px;
-    top: 6em;*/
-    z-index: 20;
-    text-align: left;
-    position: fixed;
-}
-
-#btnInfo{
-    background: none;
-    border: none;
-    background-image: url(../img/btn-info-v.png);
-    display: block;
-    position: relative;
-}
-
-
-#btnInfo:hover{
-     background-image: url(../img/btn-info-on-v.png);
-}
-
-#btnSonido{
-    background: none;
-    border: none;
-    background-image: url(../img/btn-sonido.png);
-    top: 4em;
-    right: 0px;
-    position: absolute;
-    display: block;
-    
-    width: 4em;
-    height: 3.3em;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.btnSonidoMuted, .btnSonidoMuted:hover {
-    background-image: url(../img/btn-sonido-off.png) !important;
-}
-
-#btnSonido:hover{
-     background-image: url(../img/btn-sonido-on.png);
-}
 
 #instruccion{
-    background-image: url(../img/instruccion.png);
     z-index: 22;
     text-align: left;
     position: fixed;
-    margin-left: -100px;
-    width: 21em;
-    height: 15em;
+    margin-left: -15.5em !important;
+    width: 31em;
     top: 50%;
-    left: 45.6%;
+    left: 50%;
     margin-left: -10em;
     margin-top: -7.5em;
+    background-color: white;
+    border-radius: 2em;
+    overflow: hidden;
 }
+
 #hewrap {
     width: 100%;
     height: 100%;
@@ -298,19 +343,120 @@ input, textarea  {
     right: 0;
 }
 
-
-.botonVerde{
-    width: 13em;
-    height: 6em;
-    background: none;
-    background-color: #D2E134;
-    border: 0.2em #EEE solid;
-    border-radius: 1em;
-    margin: 1em;
-    box-shadow: 5px 4px 7px #000000;
-    font-size: inherit;
+.botonptwo {
+    top: 5em;
 }
 
-.botonptwo {
-    top: 4em;
+.sombra1 {
+    box-shadow: 3px 4px 7px rgba(0,0,0,.5)
+}
+
+#instrConten {
+    padding: 1em 1em 1.9em 1em;
+    font-size: 1.7em; 
+    font-weight: normal;
+}
+
+#instrHeader {
+    height: 3em;
+    width: 100%;
+    background-color: #D61712;
+}
+
+#iconInfo {
+    background-image: url(../img/intro.png);
+    float: left;
+    height: 2.1em;
+    width: 1em;
+    margin-left: 1.7em;
+    margin-top: .5em;
+    background-size: 1em !important;
+}
+
+#btnInstSound {
+    background-image: url(../img/sonido.png);
+    float: right;
+    background-size: 2em;
+    margin: 0.5em;
+    margin-right: 0em;
+    cursor: pointer;
+}
+#btnInstSound:hover {
+    background-image: url(../img/sonido-sobre.png);
+}
+
+#btnInstClose {
+    background-image: url(../img/salir.png);
+    float: right;
+    background-size: 2em;
+    margin: 0.5em;
+    margin-right: 1.5em;
+    cursor: pointer;
+}
+#btnInstClose:hover {
+    background-image: url(../img/salir-sobre.png);
+}
+
+.icon {
+    background-repeat: no-repeat;
+    width: 2em;
+    height: 2em;
+}
+
+#menubar{
+    display: block;
+    position: fixed;
+    float:none;
+    
+    height: 4em;
+    
+    -webkit-box-flex: 3;
+    -moz-box-flex: 3;
+    box-flex: 3;
+    
+    display: -webkit-box;
+	display: -moz-box;
+	display: box;
+    
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-orient: vertical;
+
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	box-align: center;
+
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
+	box-direction: normal;
+
+	-webkit-box-pack: justify;
+	-moz-box-pack: justify;
+	box-pack: justify;
+    
+    top: 7em;
+    right: 0px;
+}
+
+#menubar >*{
+    position: absolute;
+}
+
+
+#logo {
+    background-image: url(../../img/logo.png);
+    width: 2.3em;
+    height: 2.3em;
+    float: right;
+    margin-top: 0.8em;
+}
+
+#wraperinstruccion {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    opacity: .4;
 }

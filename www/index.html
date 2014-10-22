@@ -3,31 +3,30 @@
 <head>
     <title></title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
-    <!-- TODO: DEJAR LA FUENTE SIGNIKA LOCAL -->
-    <link href='http://fonts.googleapis.com/css?family=Signika:300,400,600,700' rel='stylesheet' type='text/css'>
+    
+    <link rel='stylesheet' href='css/signika.css'  type='text/css'>
     <link rel="stylesheet" href="e1/css/scene.css"> <!-- estilo especial de la maquina -->
     <link rel="stylesheet" href="css/app.css"> <!-- estilo base de la maquina -->
     <link rel="stylesheet" href="css/hover.css"> <!-- animaciones para mouseHover -->
-     <script src="js/cssfx.js"></script>
-     <script src="js/cfg.js"></script>
-     <script src="js/jquery-2.1.1.min.js"></script>
-     <script src="js/soundjs-0.5.2.min.js"></script>
-     <script src="js/sonido2.js"></script>
-     <script src="js/helper.js"></script>
-     <script src="js/maquinaBase.js"></script>
-     <script src="js/base.js"></script>
-     <script src="e1/js/main.js"></script>
+    <script src="js/cssfx.js"></script>
+    <script src="js/cfg.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/soundjs-0.5.2.min.js"></script>
+    <script src="js/sonido2.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/maquinaBase.js"></script>
+    <script src="js/base.js"></script>
+    <script src="e1/js/main.js"></script>
 </head>
 
 <body>
-    <!-- content -->
     <div id="superWrapper" class=".animsplash">
         <div id="fondoEscena">
             <div id="escena1" class="escena boxwrap">
+            <!-- ****************************************-->
+            <!-- ********       CONTENIDO      **********-->
+            <!-- ****************************************-->
                 <div id="zonanumero">
                     <div id="numeroRandom" class="textoNumero">1.<span class="destacado">8</span>42</div>
                 </div>
@@ -35,23 +34,24 @@
                     <div id="zonaDigito" class="">
                     <div id="digito" class="digito centrado">4</div>
                 </div>
-                    <div id="zonaBotones" class="">
-                    
+                <div id="zonaBotones" class="">
                     <div class="wrapibotones centrado">
                         <div class="botan">
-                            <button id="opcion1" class="boton botonVerde grow-rotate sonidoover1"><span class="textoBoton">80</span></button>
-                            <button id="opcion2" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">800</span></button>
+                            <button id="opcion1" class="boton botonVerde grow-rotate sonidoover1 sombra1"><span class="textoBoton">80</span></button>
+                            <button id="opcion2" class="boton  botonVerde grow-rotate sonidoover1 sombra1"><span class="textoBoton">800</span></button>
                         </div>
                         <div class="botan">
-                            <button id="opcion3" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">8.000</span></button>
-                            <button id="opcion4" class="boton  botonVerde grow-rotate sonidoover1"><span class="textoBoton">8</span></button>
+                            <button id="opcion3" class="boton  botonVerde grow-rotate sonidoover1 sombra1"><span class="textoBoton">8.000</span></button>
+                            <button id="opcion4" class="boton  botonVerde grow-rotate sonidoover1 sombra1"><span class="textoBoton">8</span></button>
                         </div>
-                    </div>
-                        
+                    </div>  
                 </div>
-                </div>
+             </div>
+            <!-- *********   END CONTENIDO  *************-->
             </div>
         </div>
+        
+        <!-- *** BASE UI *** -->
         <div id="blocklayer"></div>
         
         <div id="botonesUI">
@@ -64,6 +64,7 @@
             
                     <div id="hbm" class="headpart">
                         <div id="titulo" class=""> Titulo de la maquina </div>
+                        <div id="logo" class=""></div>
                     </div>
                 </div>
                 <div id="hbr" class="headpart"></div>
@@ -72,14 +73,20 @@
         <div id="footer">
         </div>
         <div id="menubar">
-            <button id="btnInfo" class="botonesui animsBtnUI sonidoover2"></button>
-            <button id="ready" class="botonesui animsBtnUI botonptwo"></button>
-            <button id="restart" class="botonesui animsBtnUI botonptwo"></button>
-            
-            <button id="btnSonido" class="" style="display:none !important;"></button>
+            <button id="btnInfo" class="botonesui animsBtnUI sonidoover2 sombra1"></button>
+            <button id="ready"   class="botonesui animsBtnUI sonidoover2 botonptwo sombra1"></button>
+            <button id="restart" class="botonesui animsBtnUI sonidoover2 botonptwo sombra1"></button>
+            <button id="btnSonido" class="sombra1" style="display:none !important;"></button>
         </div>
         
-        <div id="instruccion"  class="animsBtnUI"></div>
+        <div id="instruccion"  class="sombra1">
+            <div id="instrHeader">
+                <div id="iconInfo" class="icon"></div>
+                <div id="btnInstClose" class="icon grow-rotate"></div>
+                <div id="btnInstSound" class="icon grow-rotate"></div>
+            </div>
+            <div id="instrConten"></div>
+        </div>
         <div id="wraperinstruccion">
         </div>
         <div id="overallmisc ">
@@ -93,7 +100,9 @@
       
 
     
-    <!-- End content -->
+    <!-- *** END BASE UI *** -->
+    
+    
     <script src="intelxdk.js"></script>         <!-- phantom library, needed for XDK api calls -->
     <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls -->
     <script src="xhr.js"></script>              <!-- phantom library, needed for XDK CORS -->
@@ -101,10 +110,5 @@
     <script src="js/app.js"></script>
     <script src="js/init-app.js"></script>
     <script src="js/init-dev.js"></script>
-    
-    
-    
-   
-
 </body>
 </html>
